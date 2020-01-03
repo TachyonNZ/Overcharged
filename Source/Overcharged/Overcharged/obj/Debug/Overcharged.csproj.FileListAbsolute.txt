@@ -1,2 +1,0 @@
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Overcharged!\Source\Overcharged\Overcharged\obj\Debug\Overcharged.csprojAssemblyReference.cache
-D:\SteamLibrary\steamapps\common\RimWorld\Mods\Overcharged!\Source\Overcharged\Overcharged\obj\Debug\Overcharged.csproj.CoreCompileInputs.cache
