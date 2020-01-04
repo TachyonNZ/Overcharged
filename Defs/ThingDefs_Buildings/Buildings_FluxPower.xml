@@ -20,8 +20,8 @@
     <uiIconPath>UI/DenseConduit_MenuIcon</uiIconPath>
     <uiIconScale>0.7</uiIconScale>
     <building>
-			<ai_chillDestination>false</ai_chillDestination>
-			<isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
       <isEdifice>false</isEdifice>
       <blueprintGraphicData>
         <texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
@@ -45,7 +45,7 @@
         <compClass>CompPowerTransmitter</compClass>
         <transmitsPower>true</transmitsPower>
       </li>
-	   <li Class="CompProperties_Glower">
+      <li Class="CompProperties_Glower">
         <glowRadius>2</glowRadius>
         <glowColor>(168,168,255,0)</glowColor>
       </li>
@@ -66,8 +66,8 @@
       <li>Electricity</li>
     </researchPrerequisites>
   </ThingDef>
-  
-  
+
+
   <ThingDef ParentName="BuildingBase">
     <defName>OVC_FluxBattery</defName>
     <label>flux battery</label>
@@ -114,8 +114,8 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <transmitsPower>true</transmitsPower>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
-	  <li Class="CompProperties_Glower">
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Glower">
         <glowRadius>2</glowRadius>
         <glowColor>(168,168,255,0)</glowColor>
       </li>
@@ -130,13 +130,13 @@
       <li>Batteries</li>
     </researchPrerequisites>
   </ThingDef>
-  
-  
+
+
   <ThingDef ParentName="BuildingBase">
     <defName>OVC_LightningRod</defName>
+    <thingClass>Overcharged.SimpleLightningRod</thingClass>
     <label>lightning rod</label>
     <description>Attracts lightning and funnels it into flux energy, useful to infuse items with it.</description>
-    <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Buildings/LightningRod</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -165,16 +165,15 @@
       <ai_chillDestination>false</ai_chillDestination>
     </building>
     <comps>
-		<li Class="CompProperties_Power">
+      <li Class="CompProperties_Power">
         <compClass>CompPowerTransmitter</compClass>
         <transmitsPower>true</transmitsPower>
       </li>
+      <li Class="Overcharged.ThingCompProperties_LightningRodRangeBoost">
+        <rangeBoost>10</rangeBoost>
+      </li>
     </comps>
     <designationHotKey>Misc1</designationHotKey>
-    <placeWorkers>
-      <li>PlaceWorker_ShowFacilitiesConnections</li>
-      <li>PlaceWorker_ReportWorkSpeedPenalties</li>
-    </placeWorkers>
   </ThingDef>
-  
+
 </Defs>

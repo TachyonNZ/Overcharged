@@ -22,6 +22,10 @@
     <weaponTags>
       <li>SpacerGun</li>
     </weaponTags>
+    <costList>
+      <Steel>130</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>

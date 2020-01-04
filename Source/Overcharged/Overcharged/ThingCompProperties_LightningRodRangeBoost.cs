@@ -18,7 +18,8 @@ namespace Overcharged
     }
 
 
-    public class ThingComp_LightningRodRangeBoost
+    public class ThingComp_LightningRodRangeBoost: ThingComp
+
     {
     }
 }
