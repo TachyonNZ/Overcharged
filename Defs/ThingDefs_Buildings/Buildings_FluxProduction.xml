@@ -31,7 +31,7 @@
       <Cleanliness>-15</Cleanliness>
     </statBases>
     <size>(4,1)</size>
-	<rotatable>False</rotatable>
+    <rotatable>False</rotatable>
     <designationCategory>Production</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>60</pathCost>
@@ -45,7 +45,7 @@
       <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
     </building>
     <comps>
-	<li Class="CompProperties_Power">
+      <li Class="CompProperties_Power">
         <compClass>CompPowerTransmitter</compClass>
         <transmitsPower>true</transmitsPower>
       </li>
@@ -60,5 +60,5 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
   </ThingDef>
-  
+
 </Defs>
