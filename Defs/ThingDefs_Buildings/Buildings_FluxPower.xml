@@ -153,13 +153,9 @@
     <designationCategory>Production</designationCategory>
     <passability>Standable</passability>
     <surfaceType>Item</surfaceType>
-    <inspectorTabs>
-      <li>ITab_Bills</li>
-    </inspectorTabs>
     <building>
       <workSpeedPenaltyOutdoors>true</workSpeedPenaltyOutdoors>
       <workSpeedPenaltyTemperature>true</workSpeedPenaltyTemperature>
-      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
       <sowTag>SupportPlantsOnly</sowTag>
       <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
       <ai_chillDestination>false</ai_chillDestination>
