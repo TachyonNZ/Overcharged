@@ -66,10 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleLightningRod.cs" />
     <Compile Include="ThingCompProperties_LightningRodRangeBoost.cs" />
+    <Compile Include="ThingComps\Props_LightningSwapper.cs" />
+    <Compile Include="ThingComps\ThingPropertiesBase.cs" />
     <Compile Include="Utilities\LinqUtilities.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ThingComps\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

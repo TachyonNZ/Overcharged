@@ -1,0 +1,9 @@
+<Defs>
+    <ThingCategoryDef>
+        <defName>UnchargedThing</defName>
+        <label>uncharged product</label>
+        <parent>Manufactured</parent>
+        <iconPath>UI/Icons/ThingCategories/Manufactured</iconPath>
+        <resourceReadoutRoot>true</resourceReadoutRoot>
+    </ThingCategoryDef>
+</Defs>

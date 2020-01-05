@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Verse;
 
@@ -10,6 +11,20 @@ namespace Overcharged.Utilities
 {
     public static class LinqUtilities
     {
+
+        /// <summary>
+        /// if the given enumeration is null this returns an empty enumeration, otherwise the input is returned unchanged 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <returns></returns>
+        [NotNull]
+        public static IEnumerable<T> MakeSafe<T>([CanBeNull, NoEnumeration] this IEnumerable<T> enumerable)
+        {
+            return enumerable ?? Enumerable.Empty<T>();
+        }
+
+
         [CanBeNull]
         public static LightningRodBase GetStrikeRod([NotNull] this IEnumerable<LightningRodBase> rods, IntVec3 startLocation)
         {

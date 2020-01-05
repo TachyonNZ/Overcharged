@@ -1,0 +1,43 @@
+<Defs>
+
+    <ThingDef Abstract="True" Name="UnchargedThingBase">
+        <thingClass>ThingWithComps</thingClass>
+        <thingCategories>
+            <li>UnchargedThing</li>
+        </thingCategories>
+        <category>Item</category>
+        <selectable>true</selectable>
+        <altitudeLayer>Item</altitudeLayer>
+        <tickerType>Never</tickerType>
+        <alwaysHaulable>true</alwaysHaulable>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+          </comps>
+    </ThingDef> 
+
+    <ThingDef ParentName="UnchargedThingBase">
+        <defName>Gun_FluxRifle_Uncharged</defName>
+        <label>flux rifle (uncharged)</label>
+        <description>A flux-infused variant of the charge rifle. Inflicts painful electrical burns on a target as well as bullet damage, however it cannot be used in its current form</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Weapons/FluxRifle</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>45000</WorkToMake>
+            <Mass>4.6</Mass>
+        </statBases>
+        <costList>
+            <Steel>130</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+            <recipeUsers>
+                <li>TableMachining</li>
+            </recipeUsers>
+        </recipeMaker>
+       
+    </ThingDef>
+</Defs>

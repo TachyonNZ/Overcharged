@@ -1,10 +1,9 @@
 <Defs>
-
-  <ThingDef ParentName="BenchBase">
+  <ThingDef ParentName="BuildingBase">
     <defName>OVC_InfusionChamber</defName>
     <label>infusion chamber</label>
     <description>A contained chamber for funneling flux into items.</description>
-    <thingClass>Building_WorkTable</thingClass>
+    <thingClass>Overcharged.LightningReceiverBuildingBase</thingClass>
     <graphicData>
       <texPath>Buildings/InfusionChamber</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -38,11 +37,17 @@
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <surfaceType>Item</surfaceType>
-    <inspectorTabs>
-      <li>ITab_Bills</li>
-    </inspectorTabs>
     <building>
-      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>UnchargedThing</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
     </building>
     <comps>
       <li Class="CompProperties_Power">
@@ -54,11 +59,21 @@
           <li>OVC_LightningRod</li>
         </linkableFacilities>
       </li>
+      <li Class="Overcharged.ThingComps.Props_LightningSwapper">
+        <entries>
+          <li>
+            <uncharged>Gun_FluxRifle_Uncharged</uncharged>
+            <charged>Gun_FluxRifle</charged>
+          </li>
+        </entries>
+      </li>
     </comps>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
     <designationHotKey>Misc3</designationHotKey>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
   </ThingDef>
-
 </Defs>
