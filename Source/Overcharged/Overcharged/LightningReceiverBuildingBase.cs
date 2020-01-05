@@ -28,7 +28,7 @@ namespace Overcharged
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             base.DeSpawn(mode);
-            IEnumerable<Thing> facilities = _comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
+            IEnumerable<Thing> facilities = Comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
             foreach (LightningRodBase lightningRodBase in facilities.OfType<LightningRodBase>())
                 if (lightningRodBase.IsLinkedTo(this))
                     lightningRodBase.Notify_ReceiverRemoved(this);
@@ -40,7 +40,7 @@ namespace Overcharged
 
             if (this.IsHashIntervalTick(45))
             {
-                IEnumerable<Thing> facilities = _comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
+                IEnumerable<Thing> facilities = Comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
                 foreach (LightningRodBase lightningRodBase in facilities.OfType<LightningRodBase>())
                 {
                     if (lightningRodBase.IsLinkedTo(this)) continue;

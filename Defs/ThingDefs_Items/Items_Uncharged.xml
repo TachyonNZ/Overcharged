@@ -11,9 +11,23 @@
         <tickerType>Never</tickerType>
         <alwaysHaulable>true</alwaysHaulable>
         <comps>
-            <li Class="CompProperties_Forbiddable"/>
-          </comps>
-    </ThingDef> 
+            <li Class="CompProperties_Forbiddable" />
+        </comps>
+    </ThingDef>
+
+
+    <ThingDef Abstract="True" Name="UnchargedWeapon" ParentName="UnchargedThingBase">
+        <comps>
+            <li Class="CompProperties_Art">
+                <nameMaker>NamerArtWeaponGun</nameMaker>
+                <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+                <minQualityForArtistic>Excellent</minQualityForArtistic>
+            </li>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+        </comps>
+    </ThingDef>
 
     <ThingDef ParentName="UnchargedThingBase">
         <defName>Gun_FluxRifle_Uncharged</defName>
@@ -38,6 +52,5 @@
                 <li>TableMachining</li>
             </recipeUsers>
         </recipeMaker>
-       
     </ThingDef>
 </Defs>

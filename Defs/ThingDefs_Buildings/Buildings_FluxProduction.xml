@@ -4,6 +4,7 @@
     <label>infusion chamber</label>
     <description>A contained chamber for funneling flux into items.</description>
     <thingClass>Overcharged.LightningReceiverBuildingBase</thingClass>
+    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Buildings/InfusionChamber</texPath>
       <graphicClass>Graphic_Single</graphicClass>
