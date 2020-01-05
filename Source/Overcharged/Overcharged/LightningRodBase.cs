@@ -17,18 +17,18 @@ namespace Overcharged
         private float? _range;
 
 
-        private List<LightningReceiverBuildingBase> _buildingReceivers = new List<LightningReceiverBuildingBase>();
+        private List<ILightningReceiverThing> _buildingReceivers = new List<ILightningReceiverThing>();
 
-        public IEnumerable<LightningReceiverBuildingBase> BuildingReceivers => _buildingReceivers;
+        public IEnumerable<ILightningReceiverThing> BuildingReceivers => _buildingReceivers;
 
 
-        public virtual void Notify_ReceiverLinked(LightningReceiverBuildingBase receiver)
+        public virtual void Notify_ReceiverLinked(ILightningReceiverThing receiver)
         {
             if (_buildingReceivers.Contains(receiver)) return;
             _buildingReceivers.Add(receiver); 
         }
 
-        public virtual void Notify_ReceiverRemoved(LightningReceiverBuildingBase receiver)
+        public virtual void Notify_ReceiverRemoved(ILightningReceiverThing receiver)
         {
             _buildingReceivers.Remove(receiver); 
         }
@@ -38,7 +38,7 @@ namespace Overcharged
             base.ExposeData();
             Scribe_Collections.Look(ref _buildingReceivers, nameof(_buildingReceivers), LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
-                _buildingReceivers = _buildingReceivers ?? new List<LightningReceiverBuildingBase>();
+                _buildingReceivers = _buildingReceivers ?? new List<ILightningReceiverThing>();
         }
 
 
@@ -101,7 +101,7 @@ namespace Overcharged
         }
 
 
-        public bool IsLinkedTo(LightningReceiverBuildingBase receiver)
+        public bool IsLinkedTo(ILightningReceiverThing receiver)
         {
             return BuildingReceivers.Contains(receiver); 
         }

@@ -58,6 +58,7 @@
     <Compile Include="CompProperties_SurgeProducer.cs" />
     <Compile Include="CompSurgeProducer.cs" />
     <Compile Include="HPatches\LightningPatch.cs" />
+    <Compile Include="ILightningReceiverThing.cs" />
     <Compile Include="LightningReceiverBuildingBase.cs" />
     <Compile Include="LightningRodBase.cs" />
     <Compile Include="LightningRodManager.cs" />

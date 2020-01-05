@@ -8,7 +8,7 @@ using Verse;
 
 namespace Overcharged
 {
-    public class LightningReceiverBuildingBase : Building_Storage, ILightningReceiver
+    public class LightningReceiverBuildingBase : Building_Storage, ILightningReceiverThing
     {
         private CompAffectedByFacilities _comp;
 
