@@ -44,6 +44,9 @@ namespace Overcharged.HPatches
                 if(radius > EPSILON)
                     GenExplosion.DoExplosion(___strikeLoc, ___map, radius, DamageDefOf.Flame, null);
                 Vector3 loc = ___strikeLoc.ToVector3Shifted();
+
+                rod?.Strike(1); 
+
                 for (int i = 0; i < 4; i++)
                 {
                     MoteMaker.ThrowSmoke(loc, ___map, 1.5f);

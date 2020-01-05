@@ -51,7 +51,7 @@
       </li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
-          <li>ToolCabinet</li>
+          <li>OVC_LightningRod</li>
         </linkableFacilities>
       </li>
     </comps>

@@ -58,6 +58,7 @@
     <Compile Include="CompProperties_SurgeProducer.cs" />
     <Compile Include="CompSurgeProducer.cs" />
     <Compile Include="HPatches\LightningPatch.cs" />
+    <Compile Include="LightningReceiverBuildingBase.cs" />
     <Compile Include="LightningRodBase.cs" />
     <Compile Include="LightningRodManager.cs" />
     <Compile Include="OverchargedModInit.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="ThingCompProperties_LightningRodRangeBoost.cs" />
     <Compile Include="Utilities\LinqUtilities.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ThingComps\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

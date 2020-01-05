@@ -1,7 +1,9 @@
 ﻿// LightningRodBase.cs created by Iron Wolf for (Overcharged) on 01/03/2020 1:39 PM
 // last updated 01/03/2020  2:21 PM
 
+using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using Verse;
 
 namespace Overcharged
@@ -10,9 +12,34 @@ namespace Overcharged
     ///     abstract base class for lightning rods
     /// </summary>
     /// <seealso cref="Verse.ThingWithComps" />
-    public abstract class LightningRodBase : Building
+    public abstract class LightningRodBase : Building, ILightningReceiver
     {
         private float? _range;
+
+
+        private List<LightningReceiverBuildingBase> _buildingReceivers = new List<LightningReceiverBuildingBase>();
+
+        public IEnumerable<LightningReceiverBuildingBase> BuildingReceivers => _buildingReceivers;
+
+
+        public virtual void Notify_ReceiverLinked(LightningReceiverBuildingBase receiver)
+        {
+            if (_buildingReceivers.Contains(receiver)) return;
+            _buildingReceivers.Add(receiver); 
+        }
+
+        public virtual void Notify_ReceiverRemoved(LightningReceiverBuildingBase receiver)
+        {
+            _buildingReceivers.Remove(receiver); 
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Collections.Look(ref _buildingReceivers, nameof(_buildingReceivers), LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+                _buildingReceivers = _buildingReceivers ?? new List<LightningReceiverBuildingBase>();
+        }
 
 
         /// <summary>
@@ -63,17 +90,27 @@ namespace Overcharged
         /// <param name="energy">The energy.</param>
         public virtual void Strike(int energy)
         {
-            foreach (ILightningReceiverComp receiverComp in AllComps.OfType<ILightningReceiverComp>())
+            foreach (ILightningReceiver receiverComp in AllComps.OfType<ILightningReceiver>())
                 receiverComp.Strike(energy);
+
+            foreach (LightningReceiverBuildingBase receiverBuildingBase in BuildingReceivers)
+            {
+                receiverBuildingBase?.Strike(energy);
+            }
+
         }
 
-      
+
+        public bool IsLinkedTo(LightningReceiverBuildingBase receiver)
+        {
+            return BuildingReceivers.Contains(receiver); 
+        }
     }
 
     /// <summary>
     ///     interface for thing comps that can receive lightning from a lightning rod
     /// </summary>
-    public interface ILightningReceiverComp
+    public interface ILightningReceiver
     {
         /// <summary>Strikes this instance with the specified energy.</summary>
         /// <param name="energy">The energy.</param>
