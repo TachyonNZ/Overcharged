@@ -3,7 +3,7 @@
     <defName>OVC_InfusionChamber</defName>
     <label>infusion chamber</label>
     <description>A contained chamber for funneling flux into items.</description>
-    <thingClass>Overcharged.LightningReceiverBuildingBase</thingClass>
+    <thingClass>Overcharged.InfusionChamber</thingClass>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Buildings/InfusionChamber</texPath>
@@ -60,17 +60,9 @@
           <li>OVC_LightningRod</li>
         </linkableFacilities>
       </li>
-      <li Class="Overcharged.ThingComps.Props_LightningSwapper">
-        <entries>
-          <li>
-            <uncharged>Gun_FluxRifle_Uncharged</uncharged>
-            <charged>Gun_FluxRifle</charged>
-          </li>
-        </entries>
-      </li>
     </comps>
     <inspectorTabs>
-      <li>ITab_Storage</li>
+      <li>ITab_Bills</li>
     </inspectorTabs>
     <designationHotKey>Misc3</designationHotKey>
     <placeWorkers>
