@@ -14,12 +14,16 @@ namespace Overcharged
 {
     public class InfusionChamber : Building_WorkTable, ILightningReceiverThing, IThingHolder
     {
+        private const int TICK_UNTIL_PRODUCING = 150;
         private readonly List<Thing> _scratchList = new List<Thing>();
         private CompAffectedByFacilities _comp;
 
         private RecipeDef _stored;
         private ThingOwner _container;
         private int tickTimer;
+
+        private int _tickTimer = 0;
+        private bool _wasStruck;
 
         public InfusionChamber()
         {
@@ -34,8 +38,11 @@ namespace Overcharged
 
             IEnumerable<ThingComp> comps = AllComps ?? Enumerable.Empty<ThingComp>();
             foreach (ILightningReceiver lightningReceiver in comps.OfType<ILightningReceiver>()) lightningReceiver.Strike(energy);
-
-            if (_stored != null && _container.Count > 0) MakeChargedThing();
+            if (_stored != null && _container.Count > 0)
+            {
+                _wasStruck = true;
+                _tickTimer = 0;
+            }
         }
 
         public void GetChildHolders(List<IThingHolder> outChildren)
@@ -69,6 +76,21 @@ namespace Overcharged
             base.ExposeData();
 
             Scribe_Deep.Look(ref _container, "container", this);
+            Scribe_Values.Look(ref _wasStruck, nameof(_wasStruck));
+            Scribe_Values.Look(ref _tickTimer, nameof(_tickTimer));
+        }
+
+        public override string GetInspectString()
+        {
+            if (_stored == null) return base.GetInspectString();
+            var builder = new StringBuilder();
+            builder.AppendLine(base.GetInspectString());
+
+            string translate = !_wasStruck
+                ? "InfuserStorage".Translate(_stored.label)
+                : "InfuserStruckAndProducing".Translate(_stored.label);
+            builder.Append(translate);
+            return builder.ToString();
         }
 
         public void LoadThings([NotNull] IEnumerable<Thing> things, [NotNull] RecipeDef recipe)
@@ -83,18 +105,21 @@ namespace Overcharged
             _stored = recipe;
         }
 
-        public override string GetInspectString()
-        {
-            if (_stored == null) return base.GetInspectString();
-            StringBuilder builder = new StringBuilder(); 
-            builder.AppendLine(base.GetInspectString());
-            builder.Append("InfuserStorage".Translate(_stored.label));
-            return builder.ToString();
-        }
-
         public override void Tick()
         {
             base.Tick();
+
+            if (_wasStruck)
+            {
+                _tickTimer += 1;
+                if (_tickTimer > TICK_UNTIL_PRODUCING)
+                {
+                    MakeChargedThing();
+                    _tickTimer = 0;
+                    _wasStruck = false;
+                }
+            }
+
             if (this.IsHashIntervalTick(45))
             {
                 IEnumerable<Thing> facilities = Comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
