@@ -71,7 +71,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>OVC_Neutronium</defName>
     <label>neutronium</label>
-    <description>Tier 2: An impossibly dense mote of neutronium, quantum stable and gravitationally altered. The densest Material known to humanity. Used in higher power weapons and machines.</description>
+    <description>Tier 2: An impossibly dense mote of neutronium, quantum stable and gravitationally altered. The densest material known to humanity. Used in higher power weapons and machines.</description>
     <graphicData>
       <texPath>Things/Neutronium</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -89,9 +89,9 @@
   </ThingDef>
   
     <ThingDef ParentName="ResourceBase">
-    <defName>OVC_StrangeMaterial</defName>
-    <label>strange Material</label>
-    <description>Tier 3: Don't fuck around with this. Strange Material is unknowable and unpredictable, used in the most advanced weapons and armour conceivable.</description>
+    <defName>OVC_ExoticMatter</defName>
+    <label>exotic matter</label>
+    <description>Tier 3: Don't fuck around with this. Exotic matter is unknowable and unpredictable, used in the most advanced weapons and armour conceivable.</description>
     <graphicData>
       <texPath>Things/Neutronium</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -99,8 +99,8 @@
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
     <statBases>
-      <MarketValue>1.9</MarketValue>
-      <Mass>0.5</Mass>
+      <MarketValue>1666</MarketValue>
+      <Mass>100</Mass>
       <StuffPower_Armor_Sharp>2</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>2</StuffPower_Armor_Blunt>
       <StuffPower_Armor_Heat>0.10</StuffPower_Armor_Heat>

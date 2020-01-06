@@ -6,7 +6,7 @@
 
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadUnchargedFluxRifle</defName>
-		<label>prime flux rifle</label>
+		<label>flux rifle</label>
 		<description>load an uncharged flux rifle into the infuser, ready to make a flux rifle</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
@@ -31,7 +31,7 @@
 
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadUnchargedHolostaff</defName>
-		<label>prime holostaff</label>
+		<label>holostaff</label>
 		<description>load an uncharged holostaff into the infuser, ready to make a charged holostaff</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
@@ -90,8 +90,8 @@
 
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadUranium</defName>
-		<label>prime fission Material</label>
-		<description>load uranium into the infuser, ready to make fission Material</description>
+		<label>prime fission material</label>
+		<description>load uranium into the infuser, ready to make fission material</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<effectWorking>Cremate</effectWorking>
