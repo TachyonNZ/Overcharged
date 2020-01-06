@@ -1,5 +1,35 @@
 <Defs>
 
+   <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Fluxed</defName>
+    <label>fluxed shot</label>
+    <graphicData>
+      <texPath>Weapons/Shot_Fluxed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <armorPenetrationBase>0.60</armorPenetrationBase>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_FluxedAimed</defName>
+    <label>fluxed shot</label>
+    <graphicData>
+      <texPath>Weapons/Shot_Fluxed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>60</damageAmountBase>
+      <armorPenetrationBase>0.80</armorPenetrationBase>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
   <ThingDef ParentName="BaseHumanGun">
     <defName>OVC_Gun_FluxRifle</defName>
     <label>flux rifle</label>
@@ -25,10 +55,10 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
+        <defaultProjectile>Bullet_Fluxed</defaultProjectile>
         <warmupTime>1</warmupTime>
         <range>30</range>
-        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
         <burstShotCount>4</burstShotCount>
         <soundCast>Shot_ChargeRifle</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
@@ -68,10 +98,10 @@
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
       <Mass>4.6</Mass>
-      <AccuracyTouch>10</AccuracyTouch>
-      <AccuracyShort>10</AccuracyShort>
-      <AccuracyMedium>10</AccuracyMedium>
-      <AccuracyLong>10</AccuracyLong>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.9</AccuracyLong>
       <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
@@ -81,11 +111,11 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
-        <warmupTime>5</warmupTime>
+        <defaultProjectile>Bullet_FluxedAimed</defaultProjectile>
+        <warmupTime>3</warmupTime>
         <range>100</range>
-        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
         <soundCast>Shot_ChargeRifle</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>

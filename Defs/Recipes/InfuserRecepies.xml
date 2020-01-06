@@ -7,7 +7,7 @@
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadUnchargedFluxRifle</defName>
 		<label>flux rifle</label>
-		<description>load an uncharged flux rifle into the infuser, ready to make a flux rifle</description>
+		<description>load ingredients into the infuser, ready to make a flux rifle</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
 		<effectWorking>Cremate</effectWorking>
@@ -16,10 +16,34 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>OVC_Gun_FluxRifle_Uncharged</li>
+						<li>Gun_ChargeRifle</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_Fluxsteel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_FissionMatter</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
 			</li>
 		</ingredients>
 		<modExtensions>
@@ -41,7 +65,31 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>OVC_Gun_FluxRifle_Uncharged</li>
+						<li>Gun_SniperRifle</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_Fluxsteel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_Neutronium</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentSpacer</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -49,14 +97,14 @@
 		</ingredients>
 		<modExtensions>
 			<li Class="Overcharged.InfuserRecipeExtension">
-				<chargedThing>OVC_Gun_FluxRifle</chargedThing>
+				<chargedThing>OVC_Gun_Holostaff</chargedThing>
 			</li>
 		</modExtensions>
 	</RecipeDef>
 
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadSteel</defName>
-		<label>prime fluxsteel</label>
+		<label>fluxsteel</label>
 		<description>load steel and plasteel into the infuser, ready to make fluxsteel</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
@@ -90,7 +138,7 @@
 
 	<RecipeDef ParentName="InfuserRecipeBase">
 		<defName>OVC_LoadUranium</defName>
-		<label>prime fission material</label>
+		<label>fission material</label>
 		<description>load uranium into the infuser, ready to make fission material</description>
 		<workAmount>10</workAmount>
 		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
@@ -109,6 +157,58 @@
 		<modExtensions>
 			<li Class="Overcharged.InfuserRecipeExtension">
 				<chargedThing>OVC_FissionMaterial</chargedThing>
+				<count>1</count>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="InfuserRecipeBase">
+		<defName>OVC_LoadNeutronium</defName>
+		<label>neutronium</label>
+		<description>load fission material into the infuser, ready to make neutronium</description>
+		<workAmount>10</workAmount>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_FissionMaterial</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<modExtensions>
+			<li Class="Overcharged.InfuserRecipeExtension">
+				<chargedThing>OVC_Neutronium</chargedThing>
+				<count>1</count>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="InfuserRecipeBase">
+		<defName>OVC_LoadExoticMatter</defName>
+		<label>exotic matter</label>
+		<description>load neutronium into the infuser, ready to make exotic matter</description>
+		<workAmount>10</workAmount>
+		<workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OVC_Neutronium</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<modExtensions>
+			<li Class="Overcharged.InfuserRecipeExtension">
+				<chargedThing>OVC_ExoticMatter</chargedThing>
 				<count>1</count>
 			</li>
 		</modExtensions>
