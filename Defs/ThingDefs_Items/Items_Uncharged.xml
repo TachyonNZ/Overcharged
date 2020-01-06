@@ -45,7 +45,7 @@
         </statBases>
         <costList>
             <OVC_Fluxsteel>130</OVC_Fluxsteel>
-            <ComponentIndustrial>2</ComponentIndustrial>
+            <OVC_FissionMaterial>2</OVC_FissionMaterial>
             <Gun_ChargeRifle>1</Gun_ChargeRifle>
         </costList>
         <recipeMaker>
@@ -61,7 +61,7 @@
         <description>A waiting receptacle for flux energy, crafted from a sniper rifle and fluxsteel. An extremely long range weapon that's also powerful in melee.\n\nThis one is NOT yet charged, which must be done at an infusion chamber.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Weapons/FluxStaffUncharged</texPath>
+            <texPath>Weapons/FluxstaffUncharged</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>

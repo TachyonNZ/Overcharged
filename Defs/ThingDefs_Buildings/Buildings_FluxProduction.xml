@@ -2,12 +2,12 @@
   <ThingDef ParentName="BuildingBase">
     <defName>OVC_InfusionChamber</defName>
     <label>infusion chamber</label>
-    <description>A contained chamber for funneling flux into items. </description>
+    <description>A contained chamber for funneling flux into items.</description>
     <thingClass>Overcharged.InfusionChamber</thingClass>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Buildings/InfusionChamber</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(4.5,3)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
@@ -31,7 +31,7 @@
       <Cleanliness>-15</Cleanliness>
     </statBases>
     <size>(4,1)</size>
-    <rotatable>False</rotatable>
+    <rotatable>True</rotatable>
     <designationCategory>Production</designationCategory>
     <passability>PassThroughOnly</passability>
     <pathCost>60</pathCost>
@@ -51,7 +51,10 @@
       </defaultStorageSettings>
     </building>
     <recipes>
-      <li>LoadUnchargedFluxRifle</li>
+      <li>OVC_LoadUnchargedFluxRifle</li>
+      <li>OVC_LoadUnchargedHolostaff</li>
+      <li>OVC_LoadSteel</li>
+      <li>OVC_LoadUranium</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">

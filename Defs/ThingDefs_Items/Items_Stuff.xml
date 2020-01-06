@@ -4,7 +4,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>OVC_Fluxsteel</defName>
     <label>fluxsteel</label>
-    <description>An iron-carbon metal alloy used for building a huge variety of structures, weapons, and machines.</description>
+    <description>An tertiary alloy of steel and crystalline flux.</description>
     <graphicData>
       <texPath>Things/FluxAlum</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -23,7 +23,6 @@
       <BluntDamageMultiplier>1</BluntDamageMultiplier>
     </statBases>
     <useHitPoints>false</useHitPoints>
-    <slagDef>ChunkSlagSteel</slagDef>
     <thingCategories>
       <li>ResourcesRaw</li>
     </thingCategories>
@@ -31,26 +30,68 @@
       <categories>
         <li>Metallic</li>
       </categories>
-      <commonality>1.00</commonality>
+      <commonality>0.00</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-      <color>(105,105,105)</color>
+      <color>(161,181,227)</color>
       <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statFactors>
-        <MaxHitPoints>1</MaxHitPoints>
-        <Beauty>1</Beauty>
-        <Flammability>0.4</Flammability>
+        <MaxHitPoints>1.5</MaxHitPoints>
+        <Beauty>3</Beauty>
+        <Flammability>0</Flammability>
       </statFactors>
       <smeltable>true</smeltable>
     </stuffProps>
   </ThingDef>
 
 
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>OVC_FissionMaterial</defName>
+    <label>fission Material</label>
+    <description>Tier 1 : A swirling microvortex of hyperthermic science, created by infusing uranium with crystalline flux. Used in basic Overcharged weapons, but you'll need something more powerful for anything better.</description>
+    <graphicData>
+      <texPath>Things/FusionMaterial</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <statBases>
+      <MarketValue>420</MarketValue>
+      <Mass>2</Mass>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+  </ThingDef>
+
   <ThingDef ParentName="ResourceBase">
     <defName>OVC_Neutronium</defName>
     <label>neutronium</label>
-    <description>An impossibly dense mote of neutronium, quantum stable and gravitationally altered. The densest matter known to humanity.</description>
+    <description>Tier 2: An impossibly dense mote of neutronium, quantum stable and gravitationally altered. The densest Material known to humanity. Used in higher power weapons and machines.</description>
+    <graphicData>
+      <texPath>Things/Neutronium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <statBases>
+      <MarketValue>777</MarketValue>
+      <Mass>50</Mass>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+  </ThingDef>
+  
+    <ThingDef ParentName="ResourceBase">
+    <defName>OVC_StrangeMaterial</defName>
+    <label>strange Material</label>
+    <description>Tier 3: Don't fuck around with this. Strange Material is unknowable and unpredictable, used in the most advanced weapons and armour conceivable.</description>
     <graphicData>
       <texPath>Things/Neutronium</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -72,23 +113,6 @@
     <thingCategories>
       <li>ResourcesRaw</li>
     </thingCategories>
-    <stuffProps>
-      <categories>
-        <li>Metallic</li>
-      </categories>
-      <commonality>1.00</commonality>
-      <constructEffect>ConstructMetal</constructEffect>
-      <color>(105,105,105)</color>
-      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
-      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      <statFactors>
-        <MaxHitPoints>1</MaxHitPoints>
-        <Beauty>1</Beauty>
-        <Flammability>0.4</Flammability>
-      </statFactors>
-      <smeltable>true</smeltable>
-    </stuffProps>
   </ThingDef>
 
 </Defs>

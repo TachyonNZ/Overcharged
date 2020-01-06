@@ -107,10 +107,6 @@
       <Beauty>-15</Beauty>
     </statBases>
     <size>(1,2)</size>
-    <costList>
-      <OVC_Fluxsteel>70</OVC_Fluxsteel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-    </costList>
     <comps>
       <li Class="CompProperties_Battery">
         <storedEnergyMax>5000</storedEnergyMax>

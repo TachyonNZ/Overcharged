@@ -63,6 +63,7 @@
     <Compile Include="ILightningReceiverThing.cs" />
     <Compile Include="InfuserRecipeExtension.cs" />
     <Compile Include="InfusionChamber.cs" />
+    <Compile Include="IntermittentLightningSprayer.cs" />
     <Compile Include="LightningReceiverBuildingBase.cs" />
     <Compile Include="LightningRodBase.cs" />
     <Compile Include="LightningRodManager.cs" />

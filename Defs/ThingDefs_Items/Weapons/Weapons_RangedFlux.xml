@@ -57,8 +57,8 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseHumanGun">
-    <defName>OVC_Gun_Fluxstaff</defName>
-    <label>fluxstaff</label>
+    <defName>OVC_Gun_Holostaff</defName>
+    <label>holostaff</label>
     <description>A flux-infused variant of the sniper rifle. Inflicts painful electrical burns on a target as well as bullet damage, with a long range and strong melee ability.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
@@ -72,7 +72,7 @@
       <AccuracyShort>10</AccuracyShort>
       <AccuracyMedium>10</AccuracyMedium>
       <AccuracyLong>10</AccuracyLong>
-      <RangedWeapon_Cooldown>0.0001</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
       <li>SpacerGun</li>
@@ -82,8 +82,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
-        <warmupTime>0.0001</warmupTime>
-        <range>1000</range>
+        <warmupTime>5</warmupTime>
+        <range>100</range>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
         <burstShotCount>1</burstShotCount>
         <soundCast>Shot_ChargeRifle</soundCast>
@@ -95,18 +95,18 @@
       <li>
         <label>stock</label>
         <capacities>
-          <li>Burn</li>
+          <li>Blunt</li>
         </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <power>15</power>
+        <cooldownTime>0.9</cooldownTime>
       </li>
       <li>
         <label>barrel</label>
         <capacities>
-          <li>Burn</li>
+          <li>Blunt</li>
         </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <power>15</power>
+        <cooldownTime>0.8</cooldownTime>
       </li>
     </tools>
   </ThingDef>

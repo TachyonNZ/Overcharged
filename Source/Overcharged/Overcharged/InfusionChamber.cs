@@ -126,7 +126,7 @@ namespace Overcharged
 
             foreach (Thing thing in _scratchList) thing.Destroy();
             _scratchList.Clear();
-
+            IntermittentLightningSprayer.ThrowMagicPuffUp(Position.ToVector3(), Map);
             Thing newThing = ThingMaker.MakeThing(ext.chargedThing, stuff);
             newThing.stackCount = ext.count;
             GenPlace.TryPlaceThing(newThing, Position, Map, ThingPlaceMode.Near);
