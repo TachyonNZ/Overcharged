@@ -1,0 +1,32 @@
+<Defs>
+    <RecipeDef Abstract="True" Name="InfuserRecipeBase">
+        <workerClass>Overcharged.RecipeWorker_Preserve</workerClass>
+        <jobString>loading</jobString>
+    </RecipeDef>
+
+    <RecipeDef ParentName="InfuserRecipeBase">
+        <defName>LoadUnchargedFluxRifle</defName>
+        <label>load uncharged flux rifle</label>
+        <description>load an uncharged flux rifle into the infuser</description>
+        <workAmount>10</workAmount>
+        <workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+        <effectWorking>Cremate</effectWorking>
+        <soundWorking>Recipe_Cremate</soundWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Gun_FluxRifle_Uncharged</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <modExtensions>
+            <li Class="Overcharged.InfuserRecipeExtension">
+                <chargedThing>Gun_FluxRifle</chargedThing>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+
+</Defs>

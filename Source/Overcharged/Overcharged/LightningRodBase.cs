@@ -93,7 +93,7 @@ namespace Overcharged
             foreach (ILightningReceiver receiverComp in AllComps.OfType<ILightningReceiver>())
                 receiverComp.Strike(energy);
 
-            foreach (LightningReceiverBuildingBase receiverBuildingBase in BuildingReceivers)
+            foreach (ILightningReceiver receiverBuildingBase in BuildingReceivers)
             {
                 receiverBuildingBase?.Strike(energy);
             }
