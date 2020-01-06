@@ -97,6 +97,7 @@ namespace Overcharged
             {
                 receiverBuildingBase?.Strike(energy);
             }
+            IntermittentLightningSprayer.ThrowMagicPuffUp(Position.ToVector3(), Map);
 
         }
 

@@ -179,7 +179,7 @@
       </li>
       <li Class="CompProperties_Facility">
         <maxSimultaneous>1</maxSimultaneous>
-        <maxDistance>4</maxDistance>
+        <maxDistance>10</maxDistance>
       </li>
     </comps>
     <designationHotKey>Misc1</designationHotKey>

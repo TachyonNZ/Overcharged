@@ -56,8 +56,9 @@ namespace Overcharged
             }
             MoteThrown moteThrown = IntermittentLightningSprayer.NewBaseMagicPuff();
             moteThrown.exactPosition = loc;
-            moteThrown.exactPosition += new Vector3(Rand.Range(-0.02f, 0.02f), 0f, Rand.Range(-0.02f, 0.02f));
-            moteThrown.SetVelocity((float)Rand.Range(-10, 10), Rand.Range(1.2f, 1.5f));
+            moteThrown.rotationRate = 0f;
+            moteThrown.Scale = 3f;
+            moteThrown.exactPosition += new Vector3(1f, 0f, 1f);
             GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map, WipeMode.Vanish);
         }
 
