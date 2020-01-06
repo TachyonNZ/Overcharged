@@ -54,12 +54,17 @@ namespace Overcharged
             {
                 return;
             }
-            MoteThrown moteThrown = IntermittentLightningSprayer.NewBaseMagicPuff();
-            moteThrown.exactPosition = loc;
-            moteThrown.rotationRate = 0f;
-            moteThrown.Scale = 3f;
-            moteThrown.exactPosition += new Vector3(1f, 0f, 1f);
-            GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map, WipeMode.Vanish);
+            for (int i = 0; i < 5; i++)
+            {
+                MoteThrown moteThrown = IntermittentLightningSprayer.NewBaseMagicPuff();
+                moteThrown.exactPosition = loc;
+                moteThrown.rotationRate = 0f;
+                moteThrown.exactPosition += new Vector3(1+Rand.Range(-1f, 1f), 0f, 1+Rand.Range(-1f, 1f));
+                moteThrown.SetVelocity((float)Rand.Range(-30, 30), Rand.Range(1.2f, 1.5f));
+            
+                GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map, WipeMode.Vanish);
+            }
+            
         }
 
         /// <summary>Throws the magic puff down.</summary>

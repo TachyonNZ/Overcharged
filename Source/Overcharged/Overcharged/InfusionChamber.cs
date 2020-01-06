@@ -8,6 +8,7 @@ using System.Text;
 using JetBrains.Annotations;
 using RimWorld;
 using Verse;
+using Verse.Sound;
 
 namespace Overcharged
 {
@@ -18,6 +19,7 @@ namespace Overcharged
 
         private RecipeDef _stored;
         private ThingOwner _container;
+        private int tickTimer;
 
         public InfusionChamber()
         {
@@ -93,7 +95,6 @@ namespace Overcharged
         public override void Tick()
         {
             base.Tick();
-
             if (this.IsHashIntervalTick(45))
             {
                 IEnumerable<Thing> facilities = Comp?.LinkedFacilitiesListForReading ?? Enumerable.Empty<Thing>();
@@ -111,6 +112,7 @@ namespace Overcharged
             _scratchList.Clear();
             _scratchList.AddRange(_container);
             _container.TryDropAll(Position, Map, ThingPlaceMode.Direct); //drop it first so we can safely destroy the contents 
+            
             var ext = _stored.GetModExtension<InfuserRecipeExtension>();
             if (ext == null)
             {
@@ -137,7 +139,13 @@ namespace Overcharged
             foreach (Thing thing in _scratchList) thing.Destroy();
             _scratchList.Clear();
             IntermittentLightningSprayer.ThrowMagicPuffUp(Position.ToVector3(), Map);
-            MoteMaker.ThrowLightningGlow(Position.ToVector3(), Map, 1.5f);
+            SoundDefOf.CryptosleepCasket_Eject.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map)));
+            for (int i = 0; i < 2; i++)
+            {
+                MoteMaker.ThrowSmoke(base.PositionHeld.ToVector3(), Map, 1.5f);
+                MoteMaker.ThrowMicroSparks(base.PositionHeld.ToVector3(), Map);
+                MoteMaker.ThrowLightningGlow(base.PositionHeld.ToVector3(), Map, 1.5f);
+            }
             Thing newThing = ThingMaker.MakeThing(ext.chargedThing, stuff);
             newThing.stackCount = ext.count;
             GenPlace.TryPlaceThing(newThing, Position, Map, ThingPlaceMode.Near);
