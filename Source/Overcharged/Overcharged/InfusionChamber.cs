@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using JetBrains.Annotations;
 using RimWorld;
 using Verse;
@@ -78,6 +79,15 @@ namespace Overcharged
             foreach (Thing thing in things) _container.TryAdd(thing);
 
             _stored = recipe;
+        }
+
+        public override string GetInspectString()
+        {
+            if (_stored == null) return base.GetInspectString();
+            StringBuilder builder = new StringBuilder(); 
+            builder.AppendLine(base.GetInspectString());
+            builder.Append("InfuserStorage".Translate(_stored.label));
+            return builder.ToString();
         }
 
         public override void Tick()
