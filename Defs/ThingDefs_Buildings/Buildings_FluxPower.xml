@@ -92,6 +92,10 @@
     <fillPercent>0.40</fillPercent>
     <tickerType>Normal</tickerType>
     <minifiedDef>MinifiedThing</minifiedDef>
+	<costList>
+      <OVC_Fluxsteel>50</OVC_Fluxsteel>
+      <OVC_Neutronium>1</OVC_Neutronium>
+    </costList>
     <thingCategories>
       <li>BuildingsPower</li>
     </thingCategories>
@@ -136,7 +140,7 @@
     <defName>OVC_LightningRod</defName>
     <thingClass>Overcharged.SimpleLightningRod</thingClass>
     <label>lightning rod</label>
-    <description>Attracts lightning and funnels it into flux energy, useful to infuse items with it.</description>
+    <description>Attracts lightning and funnels it into flux energy, useful to infuse items with it or to protect areas from lightning strikes on its own. Only one infusion chamber can actively benefit from it at a time.</description>
     <graphicData>
       <texPath>Buildings/LightningRod</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -161,6 +165,11 @@
       <ai_chillDestination>false</ai_chillDestination>
     </building>
     <specialDisplayRadius>10</specialDisplayRadius>
+	<costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>10</Plasteel>
+    </costList>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
     </placeWorkers>
@@ -174,7 +183,7 @@
       </li>
       <li Class="CompProperties_Facility">
         <maxSimultaneous>1</maxSimultaneous>
-        <maxDistance>10</maxDistance>
+        <maxDistance>4</maxDistance>
       </li>
     </comps>
     <designationHotKey>Misc1</designationHotKey>

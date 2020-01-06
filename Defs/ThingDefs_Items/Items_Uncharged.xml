@@ -30,12 +30,12 @@
     </ThingDef>
 
     <ThingDef ParentName="UnchargedThingBase">
-        <defName>Gun_FluxRifle_Uncharged</defName>
+        <defName>OVC_Gun_FluxRifle_Uncharged</defName>
         <label>flux rifle (uncharged)</label>
-        <description>A flux-infused variant of the charge rifle. Inflicts painful electrical burns on a target as well as bullet damage, however it cannot be used in its current form</description>
+        <description>A waiting receptacle for flux energy, crafted from a charge rifle and fluxsteel. Inflicts painful electrical burns on a target as well as bullet damage.\n\nThis one is NOT yet charged, which must be done at an infusion chamber.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Weapons/FluxRifle</texPath>
+            <texPath>Weapons/FluxRifleUncharged</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -44,8 +44,35 @@
             <Mass>4.6</Mass>
         </statBases>
         <costList>
-            <Steel>130</Steel>
+            <OVC_Fluxsteel>130</OVC_Fluxsteel>
             <ComponentIndustrial>2</ComponentIndustrial>
+            <Gun_ChargeRifle>1</Gun_ChargeRifle>
+        </costList>
+        <recipeMaker>
+            <recipeUsers>
+                <li>TableMachining</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="UnchargedThingBase">
+        <defName>OVC_Gun_Holostaff_Uncharged</defName>
+        <label>holostaff (uncharged)</label>
+        <description>A waiting receptacle for flux energy, crafted from a sniper rifle and fluxsteel. An extremely long range weapon that's also powerful in melee.\n\nThis one is NOT yet charged, which must be done at an infusion chamber.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Weapons/FluxStaffUncharged</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>45000</WorkToMake>
+            <Mass>4.6</Mass>
+        </statBases>
+        <costList>
+            <OVC_Fluxsteel>100</OVC_Fluxsteel>
+            <OVC_Neutronium>1</OVC_Neutronium>
+            <Gun_SniperRifle>1</Gun_SniperRifle>
         </costList>
         <recipeMaker>
             <recipeUsers>

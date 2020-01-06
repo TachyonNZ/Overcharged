@@ -5,7 +5,7 @@
     </RecipeDef>
 
     <RecipeDef ParentName="InfuserRecipeBase">
-        <defName>LoadUnchargedFluxRifle</defName>
+        <defName>OVC_LoadUnchargedFluxRifle</defName>
         <label>load uncharged flux rifle</label>
         <description>load an uncharged flux rifle into the infuser</description>
         <workAmount>10</workAmount>
@@ -16,7 +16,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>Gun_FluxRifle_Uncharged</li>
+                        <li>OVC_Gun_FluxRifle_Uncharged</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -24,7 +24,33 @@
         </ingredients>
         <modExtensions>
             <li Class="Overcharged.InfuserRecipeExtension">
-                <chargedThing>Gun_FluxRifle</chargedThing>
+                <chargedThing>OVC_Gun_FluxRifle</chargedThing>
+            </li>
+        </modExtensions>
+    </RecipeDef>
+	
+    <RecipeDef ParentName="InfuserRecipeBase">
+        <defName>OVC_LoadSteelToFluxSteel</defName>
+        <label>load uncharged flux rifle</label>
+        <description>load an uncharged flux rifle into the infuser</description>
+        <workAmount>10</workAmount>
+        <workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+        <effectWorking>Cremate</effectWorking>
+        <soundWorking>Recipe_Cremate</soundWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+        </ingredients>
+        <modExtensions>
+            <li Class="Overcharged.InfuserRecipeExtension">
+                <chargedThing>OVC_Fluxsteel</chargedThing>
+				<count>10</count>
             </li>
         </modExtensions>
     </RecipeDef>

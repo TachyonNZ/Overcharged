@@ -1,12 +1,68 @@
 <Defs>
 
   <ThingDef ParentName="BaseHumanGun">
-    <defName>Gun_FluxRifle</defName>
+    <defName>OVC_Gun_FluxRifle</defName>
     <label>flux rifle</label>
     <description>A flux-infused variant of the charge rifle. Inflicts painful electrical burns on a target as well as bullet damage.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Weapons/FluxRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <Mass>4.6</Mass>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>30</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>OVC_Gun_Fluxstaff</defName>
+    <label>fluxstaff</label>
+    <description>A flux-infused variant of the sniper rifle. Inflicts painful electrical burns on a target as well as bullet damage, with a long range and strong melee ability.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Weapons/Fluxstaff</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -39,7 +95,7 @@
       <li>
         <label>stock</label>
         <capacities>
-          <li>Blunt</li>
+          <li>Burn</li>
         </capacities>
         <power>9</power>
         <cooldownTime>2</cooldownTime>
@@ -47,8 +103,7 @@
       <li>
         <label>barrel</label>
         <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
+          <li>Burn</li>
         </capacities>
         <power>9</power>
         <cooldownTime>2</cooldownTime>

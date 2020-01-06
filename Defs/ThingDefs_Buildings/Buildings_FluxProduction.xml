@@ -2,7 +2,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>OVC_InfusionChamber</defName>
     <label>infusion chamber</label>
-    <description>A contained chamber for funneling flux into items.</description>
+    <description>A contained chamber for funneling flux into items. </description>
     <thingClass>Overcharged.InfusionChamber</thingClass>
     <tickerType>Normal</tickerType>
     <graphicData>
