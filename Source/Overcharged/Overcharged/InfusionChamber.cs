@@ -165,7 +165,7 @@ namespace Overcharged
             _scratchList.Clear();
             IntermittentLightningSprayer.ThrowMagicPuffUp(Position.ToVector3(), Map);
             SoundDefOf.CryptosleepCasket_Eject.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map)));
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 MoteMaker.ThrowSmoke(base.PositionHeld.ToVector3(), Map, 1.5f);
                 MoteMaker.ThrowMicroSparks(base.PositionHeld.ToVector3(), Map);
