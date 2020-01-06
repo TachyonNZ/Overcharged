@@ -160,7 +160,7 @@
       <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
       <ai_chillDestination>false</ai_chillDestination>
     </building>
-    <specialDisplayRadius>10</specialDisplayRadius>
+    <specialDisplayRadius>20</specialDisplayRadius>
 	<costList>
       <Steel>100</Steel>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -175,7 +175,7 @@
         <transmitsPower>true</transmitsPower>
       </li>
       <li Class="Overcharged.ThingCompProperties_LightningRodRangeBoost">
-        <rangeBoost>10</rangeBoost>
+        <rangeBoost>20</rangeBoost>
       </li>
       <li Class="CompProperties_Facility">
         <maxSimultaneous>1</maxSimultaneous>

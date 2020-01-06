@@ -3,6 +3,7 @@
 		<defName>Mote_LightningZap</defName>
 		<graphicData>
 			<texPath>Enviro/LightningZap</texPath>
+			<graphicClass>Graphic_Mote</graphicClass>
 		</graphicData>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
