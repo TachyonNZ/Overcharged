@@ -14,13 +14,12 @@ namespace Overcharged
 {
     public class InfusionChamber : Building_WorkTable, ILightningReceiverThing, IThingHolder
     {
-        private const int TICK_UNTIL_PRODUCING = 150;
+        private const int TICK_UNTIL_PRODUCING = 300;
         private readonly List<Thing> _scratchList = new List<Thing>();
         private CompAffectedByFacilities _comp;
 
         private RecipeDef _stored;
         private ThingOwner _container;
-        private int tickTimer;
 
         private int _tickTimer = 0;
         private bool _wasStruck;

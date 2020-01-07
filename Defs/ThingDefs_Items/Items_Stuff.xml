@@ -50,7 +50,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>OVC_FissionMaterial</defName>
-    <label>fission Material</label>
+    <label>fission material</label>
     <description>Tier 1 : A swirling microvortex of hyperthermic science, created by infusing uranium with crystalline flux. Used in basic Overcharged weapons, but you'll need something more powerful for anything better.</description>
     <graphicData>
       <texPath>Things/FusionMaterial</texPath>

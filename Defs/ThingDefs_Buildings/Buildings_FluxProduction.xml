@@ -55,6 +55,8 @@
       <li>OVC_LoadUnchargedHolostaff</li>
       <li>OVC_LoadSteel</li>
       <li>OVC_LoadUranium</li>
+      <li>OVC_LoadFissionMaterial</li>
+      <li>OVC_LoadNeutronium</li>
     </recipes>
     <comps>
       <li Class="CompProperties_Power">

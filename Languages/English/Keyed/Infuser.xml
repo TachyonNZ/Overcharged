@@ -1,4 +1,5 @@
 <LanguageData>
     <InfuserStorage>Awaiting surge to infuse {0}</InfuserStorage>
     <InfuserStruckAndProducing>Infusing {0}</InfuserStruckAndProducing>
+	<InfuserProgress>Infusion progress: {0}</InfuserProgress>
 </LanguageData>
