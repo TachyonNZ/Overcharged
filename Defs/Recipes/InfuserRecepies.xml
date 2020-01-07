@@ -32,7 +32,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>OVC_FissionMatter</li>
+						<li>OVC_FissionMaterial</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
